@@ -42,6 +42,8 @@
     <section>
       <button id="miBoton">Activo</button>
       <button onclick="negarValor()">Hazme click!</button>
+      <br><br>
+      <p>Mayor a <a href="#" id="mayor_10">10</a> o menor a <a href="#" id="menor_10">10</a> personas</p>
     </section>
 
     <script>
@@ -56,6 +58,30 @@
         miVariable = !miVariable;
         console.log(miVariable);
       }
+      
+      
+      
+    let isModalVisible = false;
+    document.querySelector("#mayor_10").addEventListener("click", () => {
+      const cuerpoAddModal = document.querySelector("#cuerpo_add_modal");
+
+      if (isModalVisible) {
+        cuerpoAddModal.style.display = "none";
+        isModalVisible = false;
+      } else {
+        cuerpoAddModal.style.display = "block";
+        isModalVisible = true;
+      }
+    });
+      
+      
+    let isModalVisible2 = false;
+    document.querySelector("#menor_10").addEventListener("click", () => {
+      const cuerpoAddModal2 = document.querySelector("#cuerpo_add_modal");
+
+      isModalVisible2 = !isModalVisible2;
+      cuerpoAddModal2.style.display = isModalVisible2 ? "block" : "none";
+    });
     </script>
   </body>
 </html>
